@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>IIITA - SERL</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" href="./iiit.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<script>
+var slideIndex = 1;
+//showDivs(slideIndex);
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length-1) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+setInterval(function(){ showDivs(slideIndex++); }, 5000);
+</script>
+
+</head>
+<body onload="plusDivs(-1)">
+    <div id="head_bg"><center><img src="./head_main.jpg" width="60%"></center></div>
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                                <a href="http://iiita.ac.in"><img src="./IIIT_logo_transparent.gif" class="navbar-brand" height="60px"></a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="./faculty.html">Faculty</a></li>
+                <li><a href="./resarcher.htm">Researchers</a></li>
+                <li><a href="./publications.htm">Publications</a></li>
+                <li><a href="./project.htm">Projects</a></li>
+                <li><a href="./resources.htm">Resources</a></li>
+                <li><a href="./contact.htm">Contact us</a></li>
+                </ul>
+        </div>
+    </nav>
+    <div class="row" style="padding:20px;">
+            <div class="col-sm-8">
+                    <div class="container-fluid">
+                            <div class="card" style="padding:40px;">
+     <div class="w3-content w3-display-container" style="width:100%;height:500px">
+            <img class="mySlides" src="./PIC/pic0.jpg" style="width:100%;height:500px;object-fit: cover;">
+            <img class="mySlides" src="./PIC/pic1.jpg" style="width:100%;height:500px;object-fit: cover;">
+            <img class="mySlides" src="./PIC/pic2.jpg" style="width:100%;height:500px;object-fit: cover;">
+            <img class="mySlides" src="./PIC/pic3.jpg" style="width:100%;height:500px;object-fit: cover;">
+            <img class="mySlides" src="./PIC/pic4.jpg" style="width:100%;height:500px;object-fit: cover;">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+                            <h2><br>About - SERL</h2>
+                            <p style="    text-align: justify;
+                            text-justify: inter-word;">The Software Engineering Research Lab (SERL) at IIIT Allahabad is to be established to
+                            undertake world-class research in designing of complex, largescale software-intensive systems
+                            of scalable solutions, which are steered by business needs. The objective of the establishment
+                            of SERL@IIITA is to cover cross-disciplinary research domains and to address real industrial
+                            software engineering challenges. Recent developments in data driven industries, cyber physical
+                            systems, smart city applications and business intelligence solutions have significant scope for
+                            software development industries and finding solutions to underneath challenges in
+                            collaboration with industry experts is genuinely needed to make sure that the solutions are
+                            evaluated thoroughly and fit in the industrial context. Thus the establishment of Software
+                            Engineering Research Lab at IIITA may provide a strong platform to researchers and students to
+                            showcase their research potential world-wide.</p>
+                </div></div>
+            </div>
+            <div class="col-sm-4">
+
+                    <div class="card" style="padding:40px;">
+                            <h2>News</h2>
+                                <hr>
+                            <marquee scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();" direction = "up" style="height:150px;">
+                                <ul>
+                                    <li>The <b style="color:rgb(12, 0, 82)">SERL website</b> is up and running !!</li><br>
+                                    <li>This text will scroll from bottom to up</li><br>
+                                    <li>This text will scroll from bottom to up</li><br>
+                                    <li>This text will scroll from bottom to up</li><br>
+                                    <li>This text will scroll from bottom to up</li><br>
+                                </ul>
+                            </marquee>
+                            <hr>
+                    </div>
+
+                    <div class="card" style="padding:40px;margin-top:20px;">
+                        <h2>Vision and Mission</h2>
+                            <hr>
+                            <p style="    text-align: justify;
+                            text-justify: inter-word;">
+                                <i><b>"Big thinking precedes great achievement."</b></i><br><br>
+                                The <b>mission of this initiative is to establish a research lab of an industrial repute</b> through various
+                                scholarly activities such as development of software tools, establishment of special interest
+                                groups, organizing conferences, workshops, forums for open source solutions and hands-on
+                                training in order to provide reliable and repeatable results to <b>reflect our core strategy and
+                                vision of deepening excellence.</b>
+                            </p>
+                        <hr>
+                </div>
+
+            </div>
+    </div>
+
+    <footer>
+        &#169; 2023 SERL - Software Engineering Research Lab <br> Indian Institute of Information Technology Allahabad
+        <a style="color:rgb(12, 0, 82)" href="https://www.github.com/sushantk1274"> | Designed by <span>Sushant kumar</span></a>
+    </footer>
+
+
+</body>
+</html>
