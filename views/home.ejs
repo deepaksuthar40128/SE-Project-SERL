@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>IIITA - SERL</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" href="img/iiit.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+    #head_bg h1 {
+      font-family: 'Roboto Slab', serif;
+    }
+  </style>
+
+
+
+
+
+
+
+
+  <script>
+    var slideIndex = 1;
+    //showDivs(slideIndex);
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length - 1) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+    setInterval(function () { showDivs(slideIndex++); }, 5000);
+  </script>
+
+</head>
+
+<body onload="plusDivs(-1)">
+  <div id="head_bg">
+    <center>
+      <h1> SOFTWARE ENGINEERING RESEARCH LAB </h1>
+      <h5> Indian Institute Of Information Technology Allahabad</h5>
+    </center>
+  </div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="http://iiita.ac.in"><img src="content/IIIT.gif" class="navbar-brand" height="60px"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="/faculty">Faculty</a></li>
+        <li><a href="/researcher">Researchers</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/project">Projects</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/contact">Contact us</a></li>
+      </ul>
+      <% if(logged){%>
+        <button id="login"> <a href="/logout"> LOGOUT </a> </button>
+        <% }else{ %>
+          <button id="login"> <a href="/login"> LOGIN </a> </button>
+          <%}%>
+
+    </div>
+  </nav>
+  <% if( error !="" ){ %>
+    <div class="error" role="alert">
+      <strong> Error </strong>
+      <%= error %>
+        <button type="button" onclick="document.getElementsByClassName('error')[0].remove()"
+          class="btn-close">x</button>
+    </div>
+    <% } %>
+      <% if( error_messages !="" ){ %>
+        <div class="error" role="alert">
+          <strong> Error </strong>
+          <%= error_messages %>
+            <button type="button" onclick="document.getElementsByClassName('error')[0].remove()"
+              class="btn-close">x</button>
+        </div>
+        <% } %>
+          <div class="row" style="padding:20px;">
+            <div class="col-sm-8">
+              <div class="container-fluid">
+                <div class="card" style="padding:40px;">
+                  <div class="w3-content w3-display-container" style="width:100%;height:500px">
+                    <img class="mySlides" src="./content/pic0.jpeg" style="width:100%;height:500px;object-fit: cover;">
+                    <img class="mySlides" src="./content/pic1.jpeg" style="width:100%;height:500px;object-fit: cover;">
+                    <img class="mySlides" src="./content/pic2.jpeg" style="width:100%;height:500px;object-fit: cover;">
+                    <img class="mySlides" src="./content/pic3.jpeg" style="width:100%;height:500px;object-fit: cover;">
+                    <img class="mySlides" src="./content/pic4.jpeg" style="width:100%;height:500px;object-fit: cover;">
+
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                  </div>
+
+                  <h2><br>About - SERL</h2>
+                  <p style="    text-align: justify;
+                            text-justify: inter-word;">IIIT Allahabad is establishing the Software Engineering Research
+                    Lab (SERL) with the aim to conduct cutting-edge research in designing complex and large-scale
+                    software-intensive systems that can offer scalable solutions aligned with business needs. The lab
+                    will cover interdisciplinary research domains and focus on addressing the practical software
+                    engineering challenges faced by industries.With recent developments in data-driven industries,
+                    cyber-physical systems, smart city applications, and business intelligence solutions, there is a
+                    significant demand for software development industries to provide solutions to these challenges. To
+                    ensure that these solutions are thoroughly evaluated and meet industrial standards, collaboration
+                    with industry experts is essential. The establishment of SERL@IIITA will provide a robust platform
+                    for researchers and students to showcase their potential globally.The main objective of SERL@IIITA
+                    is to offer solutions to complex software engineering problems faced by industries. By conducting
+                    research in software design and development, SERL@IIITA will contribute to the growth of software
+                    development industries, and enable them to provide scalable and robust solutions aligned with
+                    business needs. The lab will focus on real industrial challenges and offer interdisciplinary
+                    research opportunities to students and researchers.Overall, the establishment of SERL@IIITA will
+                    provide a strong platform for researchers and students to work on cutting-edge software engineering
+                    problems and offer solutions that can be applied in real-world industrial scenarios</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+
+              <div class="card" style="padding:40px;">
+
+                <h2>News
+                  <%if(logged){%>
+                    <span onclick="funNews()" id="plus">
+                      <buttton id="abc"> + </buttton>
+                    </span>
+                    <%}%>
+                </h2>
+                <!-- <a id="plus"> </a> -->
+                <hr>
+                <marquee scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();" direction="up"
+                  style="height:150px;">
+                  <ul id="News">
+                  </ul>
+                </marquee>
+                <hr>
+                <%if(logged){%>
+                  <div id="newsInput" style="display: none;">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <input type="text" name="news" id="news"> <button style="margin-left: 20px; padding: 2px;"
+                      onclick="addNews()" type="submit">Add</button>
+                  </div>
+                  <%}%>
+              </div>
+
+              <div class="card" style="padding:40px;margin-top:20px;">
+                <h2>Vision and Mission</h2>
+                <hr>
+                <p style="    text-align: justify;
+                            text-justify: inter-word;">
+                  <i><b>"Big thinking precedes great achievement."</b></i><br><br>
+                  The mission of this initiative is to establish a world-class research lab focused on industrial
+                  applications. The lab will engage in various scholarly activities such as developing software tools,
+                  special interest groups, conferences, workshops, forums for open-source solutions, and hands-on
+                  training. Through these initiatives, the lab aims to provide reliable and repeatable results
+                  reflecting its core strategy and vision of deepening excellence. The lab will become a go-to resource
+                  for industries seeking innovative solutions to their software engineering challenges, contributing to
+                  the growth of the software industry nationally and globally.</b>
+                </p>
+                <hr>
+              </div>
+
+            </div>
+          </div>
+
+          <footer>
+            &#169; 2023 SERL - Software Engineering Research Lab <br> Indian Institute of Information Technology
+            Allahabad
+            | Designed by Group
+          </footer>
+          <div class="popup">
+            <button style="display: none;" id="popup-btn">Open Popup</button>
+            <div id="popup-overlay">
+              <div id="popup">
+                <h2>Popup Title</h2>
+                <div class="main-popup">Popup content goes here...</div>
+                <button id="close-btn">Close</button>
+                <button style="display: none;" id="Submit-btn">Add</button>
+              </div>
+            </div>
+          </div>
+
+          <script src="js/main.js"></script>
+</body>
+
+</html>

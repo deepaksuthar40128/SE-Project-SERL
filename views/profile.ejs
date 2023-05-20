@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/profile.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="<%= profile %>" alt="Profile Image">
+        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= username %>" readonly>
+
+            <label for="project">Project:</label>
+            <input type="text" id="project" name="project" value="Robotics" readonly>
+
+            <label for="publication">Publication:</label>
+            <input type="text" id="publication" name="publication" value="Tesla" readonly>
+
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation" name="designation" value="PhD" readonly>
+
+            <label for="professor">Assigned Professor:</label>
+            <input type="text" id="professor" name="professor" value="Dr Sonali Aggarwal" readonly>
+
+            <label for="subject">Assigned Subjects:</label>
+            <input type="text" id="subject" name="subject" value="DBMS" readonly>
+        </form>
+    </div>
+</body>
+
+</html>

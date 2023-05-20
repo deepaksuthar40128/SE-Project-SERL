@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>SERL - Faculty</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="img/iiit.png" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+      #head_bg h1 {
+        font-family: "Roboto Slab", serif;
+      }
+    </style>
+  </head>
+  <body onload="plusDivs(-1)">
+    <div id="head_bg">
+      <center>
+        <h1>SOFTWARE ENGINEERING RESEARCH LAB</h1>
+        <h5>Indian Institute Of Information Technology Allahabad</h5>
+      </center>
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="http://iiita.ac.in"
+            ><img src="content/IIIT.gif" class="navbar-brand" width="60px"
+          /></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li class="active"><a href="#">Faculty</a></li>
+          <li><a href="/researcher">Researchers</a></li>
+          <li><a href="/publications">Publications</a></li>
+          <li><a href="/project">Projects</a></li>
+          <li><a href="/resources">Resources</a></li>
+          <li><a href="/contact">Contact us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <% if (logged && role==='hod' ) { %>
+      <div id="faculty" onclick="me()">
+        <button>Add Faculty</button>
+      </div>
+      <% } %>
+
+    <div class="loading">
+      <!-- <div class="loading-img"> <img src="https://cdn-icons-png.flaticon.com/128/3305/3305803.png" alt=""> </div> -->
+      <div class="loadingbar">
+        <div class="loadbar"></div>
+      </div>
+      <div class="percent">0%</div>
+    </div>
+    <div id="faculty-container"></div>
+    <footer>
+      &#169; 2023 SERL - Software Engineering Research Lab <br />
+      Indian Institute of Information Technology Allahabad | Designed by Team
+      Innovation
+    </footer>
+    <div class="popup">
+      <button style="display: none" id="popup-btn">Open Popup</button>
+      <div id="popup-overlay">
+        <div id="popup">
+          <h2>Popup Title</h2>
+          <div class="main-popup">
+            <input type="file" name="file" id="file" accept="image/*" required style="display:none">
+            <div class="userprofile">
+              <label for="file">
+                <img id="userimg" src="img/noAvtar.png" alt=""></label>
+            </div>
+            <form id="myform" action="#" class="form-style-9">
+              <ul>
+                <li>
+                  <input
+                    type="text"
+                    name="field1"
+                    class="field-style field-split align-left"
+                    placeholder="Name"
+                  />
+                  <input
+                    type="email"
+                    name="field2"
+                    class="field-style field-split align-right"
+                    placeholder="Clg Email"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="field3"
+                    class="field-style field-split align-left"
+                    placeholder="Phone"
+                  />
+                  <input
+                    type="url"
+                    name="field4"
+                    class="field-style field-split align-right"
+                    placeholder="Website"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="field5"
+                    class="field-style field-split align-left"
+                    placeholder="Personal Email"
+                  />
+                  <input
+                    type="url"
+                    name="field5"
+                    class="field-style field-split align-right"
+                    placeholder="position"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="field3"
+                    class="field-style field-full align-none"
+                    placeholder="Address"
+                  />
+                </li>
+                <input type="hidden" id="csrf" name="_csrf" value="<%= csrfToken %>" />
+                <li>
+                  <input id="sbmt" type="submit" value="Add" />
+                  <input type="reset" value="RESET" />
+                </li>
+              </ul>
+            </form>
+          </div>
+          <button id="close-btn">Close</button>
+          <button style="display: none" id="Submit-btn">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dummy.js"></script>
+    <script src="js/faculty.js"></script>
+  </body>
+</html>

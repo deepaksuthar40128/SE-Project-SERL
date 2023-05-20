@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password Reset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Reset</h1>
+        <form id="myform">
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="cpassword" name="confirm-password" required>
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <input type="submit" id="submitbtn" value="Reset Password">
+        </form>
+    </div>
+    <script>
+        document.getElementById('submitbtn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const pass = document.getElementById('password').value;
+            const cpass = document.getElementById('cpassword').value;
+            if (pass == cpass) {
+                await myAjaxPOST('/resetPass', { password: pass }, document.getElementById('csrf').value)
+                location.replace('/login');
+            } else {
+                alert("error");
+            }
+        })
+        function myAjaxPOST(url, body, token) {
+            return new Promise((Resolve, Reject) => {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': token,
+                    }
+                });
+                var request = {
+                    "url": url,
+                    "method": "POST",
+                    "data": body
+                }
+                $.ajax(request).done(function (response) {
+                    Resolve(response);
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
