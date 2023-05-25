@@ -1,6 +1,6 @@
 # SE-Project-SERL
 
-## Hey Everyone, [This](https://se-project-serl.vercel.app/) is our Software Engneering Project from sem-4
+## Hey Everyone, [This](https://se-project-serl.vercel.app/) is our Software Engineering Project from sem-4
 
 ## Our Team
 
@@ -21,12 +21,11 @@
 
 
 ## Introduction
-
-This Project is related to our College [IIIT-A](https://www.iiita.ac.in/) SERL. Where college faculties and Research Schollers are genrater of Data, And Everyone is Consumer for same data.
+This Project is related to our College [IIIT-A](https://www.iiita.ac.in/) SERL. Where college faculties and Research Scholars are generator of Data, And Everyone is Consumer for same data.
 
  ## features
  
- - Faculty and Research Schooler Dynamic Data
+ - Faculty and Research Scholars Dynamic Data
  - User Friendly view
 
  ## packages
