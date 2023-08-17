@@ -4,7 +4,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
-const MemoryStore = require('memorystore')(expressSession)
+const MongoDBStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
@@ -25,12 +25,18 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser('random'));
 
+const store = new MongoDBSession({
+      uri: process.env.MONGO_URL,
+      collection: "mySessions",
+      expires: 1000 * 60 * 60 * 24
+})
+
 app.use(expressSession({
       secret: "random",
       resave: true,
       saveUninitialized: true,
       maxAge: 24 * 60 * 60 * 1000,
-      store: new MemoryStore(),
+      store,
 }));
 
 
