@@ -5,7 +5,7 @@ module.exports = function (passport) {
     passport.use(new GoogleStrategy({
         clientID: process.env.GoogleclientId,
         clientSecret: process.env.GoogleclientSecret,
-        callbackURL: "http://localhost/google/callback"
+        callbackURL: "https://se-project-serl.vercel.app/google/callback"
     }, (accessToken, refreshToken, profile, done) => {
         user.findOne({ email: profile.emails[0].value }).then((data) => {
             if (data) {
